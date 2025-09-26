@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# E-Commerce Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React frontend for an e-commerce application built with TailwindCSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Product Listing Page** - Grid layout displaying products with images, names, descriptions, and prices
+- **Shopping Cart** - Add/remove products, update quantities, view total
+- **Order Form** - Customer information form with validation
+- **Responsive Design** - Mobile-first approach with TailwindCSS
+- **State Management** - React Context for cart state
+- **API Integration** - Connects to backend for products and orders
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Header.js       # Navigation header with cart button
+│   ├── ProductCard.js  # Individual product display
+│   ├── LoadingSpinner.js # Loading indicator
+│   └── ErrorMessage.js # Error display component
+├── pages/              # Page components
+│   ├── ProductListPage.js # Product listing page
+│   └── CartPage.js     # Shopping cart page
+├── context/            # React Context
+│   └── CartContext.js  # Global cart state management
+├── services/           # API services
+│   └── api.js         # Backend API integration
+├── App.js             # Main app component with routing
+└── index.js           # App entry point
+```
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (v14 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install dependencies:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Start the development server:
+```bash
+npm start
+```
 
-### `npm run eject`
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Integration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make sure the backend server is running on port 5000:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd ../backend
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features Overview
 
-## Learn More
+### Product Listing Page (`/`)
+- Fetches products from backend API
+- Responsive grid layout
+- Product cards with images, names, descriptions, prices
+- "Add to Cart" functionality
+- Loading states and error handling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Shopping Cart (`/cart`)
+- View cart items with quantities
+- Update item quantities
+- Remove items from cart
+- Customer information form
+- Form validation for required fields
+- Order placement with backend integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Cart State Management
+- Global cart state using React Context
+- Add/remove products
+- Update quantities
+- Calculate totals
+- Persist cart across page navigation
 
-### Code Splitting
+### Form Validation
+- Required field validation
+- Real-time error display
+- User-friendly error messages
+- Form submission handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Integration
 
-### Analyzing the Bundle Size
+The frontend integrates with the backend API:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **GET /api/products** - Fetch product list
+- **POST /api/order** - Place order with customer details
 
-### Making a Progressive Web App
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Built with TailwindCSS for:
+- Responsive design
+- Utility-first approach
+- Consistent spacing and colors
+- Hover and focus states
+- Mobile-first design
 
-### Advanced Configuration
+## Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Available Scripts
 
-### Deployment
+- `npm start` - Start development server
+- `npm build` - Build for production
+- `npm test` - Run tests
+- `npm eject` - Eject from Create React App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Code Structure
 
-### `npm run build` fails to minify
+- **Components** are modular and reusable
+- **Context** provides global state management
+- **Services** handle API communication
+- **Pages** are route components
+- **Clean separation** of concerns
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Production Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. The `build` folder contains the production-ready files.
+
+3. Deploy the `build` folder to your hosting service.
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
